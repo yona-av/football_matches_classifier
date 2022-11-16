@@ -77,7 +77,11 @@ Just before moving to the prediction results here are two plots of the features 
 * Heatmap of the top 4 positive and negative correlated features:
 
 
+<<<<<<< HEAD
 ![heatmap-2.png](attachment:heatmap-2.png)
+=======
+![heatmap](https://github.com/yona-av/la_liga_project/blob/main/to%20ignore/heatmapgit.png)
+>>>>>>> e698f160d569fed21976d97656782bbb1d82f215
 
 
 
@@ -86,7 +90,7 @@ Just before moving to the prediction results here are two plots of the features 
 
 * Histograms of the top 4 positive and negative correlated features after rescaling of the data:
 
-![histograms.png](attachment:histograms.png)
+![histograms](https://github.com/yona-av/la_liga_project/blob/main/to%20ignore/histogramsgit.png)
 
 ## Predictions
 Finally the predictions measurments made on the test set with the Logistic Regression classifier are : 

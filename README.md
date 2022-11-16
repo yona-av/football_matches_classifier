@@ -4,7 +4,7 @@
 ## Abstract 
 In this project I created a binary classifier (win vs lose and draw). The ability to predict if a team will win, based on match statistics, could be very usefull tool to gain insights. Such a model could be used by a coaching staff of a team, for example develope a more targeted work on attributes that are highly correlated to winning. Another market that could benefit from this kind of a model is the betting market.
 
-I gathered the data from rbref.com with a scraper I wrote using BeautifulSoup. Then I did EDA and some data-processing that mostly included dealing with nan values. The next step was feature selction using: p-value test, correlation test and omitting features that might indicate a win (e.g scored_goals, clean_sheet). 
+I gathered the data from FBREF.com with a [scraper](https://github.com/yona-av/la_liga_project/blob/main/scraper_code.ipynb) I wrote using BeautifulSoup. Then I did EDA and some data-processing that mostly included dealing with nan values. The next step was feature selction using: p-value test, correlation test and omitting features that might indicate a win (e.g scored_goals, clean_sheet). 
 For the training part I tried three different classifiers : **RandomForest**, **SGD** and **logistic regression** which gave the best results : **f-score** = 0.82 and cross-validation cv=3, gave an average of **0.82**, **0.79**, **0.78** for **accuracy**, **precision** and **recall** accordingly. 
 The **prediction** using logistic regression classifier gave the the following results: 
 * **f-score** : 0.79
@@ -17,7 +17,7 @@ The **prediction** using logistic regression classifier gave the the following r
       In order to gather the data for this project I wrote a web scraper using BeautifulSoup package. It scraped the data from the sporsts statistics website fbref.com. The matches I included are from the LaLiga (first spanish football   division) seasones 2017-2022. I included the teams that participated in LA-Liga for those five consecutive seasones (in other words the teams that didnt relegate).
 
 * **Processing:**  
-     - Filling nan values either with a specific value that made sense to this attribute (as can be seen in the project [code](https://github.com/yona-av/la_liga_project/blob/main/project_code.ipynb) or with the average of the column if the nans were under 10% of all the values in the feature.
+     - Filling nan values either with a specific value that made sense to this attribute (as can be seen in the [project code](https://github.com/yona-av/la_liga_project/blob/main/project_code.ipynb) or with the average of the column if the nans were under 10% of all the values in the feature.
      
      - Omitting categorical features that doesn't contribute 
      - Converting string categorical features into numerical categorical features 
@@ -57,7 +57,7 @@ SGD did well on the train set but poorly on the cross-validation - so overfit th
          is dropped. Otherwise it indicates that there is a statistical significance between them and the feature is kept.
          
 2. **Hand Picked Features**
-       As mentioned before In this step I picked the features that might indicate a win (e.g scored_goals, clean_sheet). Or features that there is little control over them as they are composed of many factors e.g - x.g and npxg_per_sho (The full list could be seen in the project code. (need to linkLINK!!!)
+       As mentioned before In this step I picked the features that might indicate a win (e.g scored_goals, clean_sheet). Or features that there is little control over them as they are composed of many factors e.g - x.g and npxg_per_sho (The full list could be seen in the [project code](https://github.com/yona-av/la_liga_project/blob/main/project_code.ipynb))
        
 3. **Correlation Test**
        This test calculates the correlation between each pair of features. If it is larger than a chosen threshold (0.9 in this case) then we know that there is little variance between them and the classifier's algorithm won't learn much new information, if at all.

@@ -12,7 +12,7 @@ The **prediction** using logistic regression classifier gave the the following r
 
 
 
-## Data part - Scraping, Processing and Analysis 
+## Data  - Scraping, Processing and Analysis 
 * **Scraping:**
       In order to gather the data for this project I wrote a web scraper using BeautifulSoup package. It scraped the data from the sporsts statistics website fbref.com. The matches I included are from the LaLiga (first spanish football   division) seasones 2017-2022. I included the teams that participated in LA-Liga for those five consecutive seasones (in other words the teams that didnt relegate).
 
@@ -46,7 +46,7 @@ Running a quick test at the current situation gave these results:
 | SGD               |  0.83              |  0.8                  |   0.57             |  0.55       |
 | Linear regression |  0.88              |  0.85                 |   0.78             |  0.74       |
 
-<br>As it is seen from the table. The linear regression classifier did the best. Yet in order for it to converge I had to increase max_iter to 5000. To compute the coss-validation with cv=3 took ~ 1.5 min (this was for all solvers under l2 penalty - 'newton-cg','saga', 'sag).
+<br>As it is seen from the table. The linear regression classifier did the best. Yet in order for it to converge I had to increase max_iter to 5000. To compute the coss-validation with cv=3 took ~ 1.5 min (this was for all solvers under l2 penalty - 'newton-cg', 'saga', 'sag).
 
 <br>As to the other classifiers. RF did poorly on the f-score measurment, yet it did seem to generlize well. 
 SGD did well on the train set but poorly on the cross-validation - so overfit the data. There was a need for more feature selection filters to see whether the classifiers could do better. Hence I used p-value test and correlation test between features. At the end the feature selection test consisted of three steps : 
@@ -77,7 +77,7 @@ Just before moving to the prediction results here are two plots of the features 
 * Heatmap of the top 4 positive and negative correlated features:
 
 
-![heatmap](https://github.com/yona-av/la_liga_project/blob/main/to%20ignore/heatmap.png)
+![heatmap-2.png](attachment:heatmap-2.png)
 
 
 
@@ -89,13 +89,14 @@ Just before moving to the prediction results here are two plots of the features 
 ![histograms.png](attachment:histograms.png)
 
 ## Predictions
-Finally the predictions made on the test set with the Logistic Regression classifier are : 
+Finally the predictions measurments made on the test set with the Logistic Regression classifier are : 
 * **Accuracy** : 0.83
 * **precision** : 0.81
 * **recall** : 0.77
 * **f-score** : 0.79
 
-
-```python
-
-```
+## Code and Resources 
+* First of all the data used in this project is credited to Sports Resources at the website FBREF 
+  - https://fbref.com/en/
+* Pyhton version : 3.8
+* Packages used : Numpy, Pandas, Matplotlib, Seaborn, Scipy, Sklearn, BeautifulSoup

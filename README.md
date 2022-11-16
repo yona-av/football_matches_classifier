@@ -77,7 +77,7 @@ Just before moving to the prediction results here are two plots of the features 
 * Heatmap of the top 4 positive and negative correlated features:
 
 
-![heatmap-2.png](attachment:heatmap-2.png)
+![heatmap](https://github.com/yona-av/la_liga_project/blob/main/to%20ignore/heatmap.png)
 
 
 
